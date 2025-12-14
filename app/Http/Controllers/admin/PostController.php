@@ -103,9 +103,8 @@ class PostController extends Controller
             $manager = new ImageManager(new Driver());
             $manager->read($img)->resize(1920, 1280)->toPng()->save('upload/post/'.$img_name);
             $filename = 'upload/post/'.$img_name;
-            if ($data->image)
-            {
-                unlink($data->image);
+            if ($data->image && file_exists($data->image)) {
+                unlink(public_path($data->image));
             }
 
             $data->update([

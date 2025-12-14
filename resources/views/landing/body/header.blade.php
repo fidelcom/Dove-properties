@@ -1,3 +1,6 @@
+@php
+    $contact = \App\Models\Contact::first();
+@endphp
 <header class="header-area">
     <div class="header-top second-header d-none d-md-block">
         <div class="container">
@@ -12,11 +15,11 @@
                         <ul>
                             <li>
                                 <i class="icon dripicons-phone"></i>
-                                <span>+8 12 3456897</span>
+                                <span>{{ $contact->phone }}</span>
                             </li>
                             <li>
                                 <i class="icon dripicons-mail"></i>
-                                <span>info@example.com</span>
+                                <span>{{ $contact->email }}</span>
                             </li>
                             <li>
                                 <i class="icon dripicons-clock"></i>
@@ -34,7 +37,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-2">
                         <div class="logo">
-                            <a href="index.html"><img src="{{ asset('landing/img/logo/logo.png') }}" alt="logo"></a>
+                            <a href="/"><img src="{{ asset('landing/img/logo/logo.png') }}" width="70" alt="logo"></a>
                         </div>
                     </div>
                     <div class="col-xl-10 col-lg-9">
@@ -43,25 +46,26 @@
                             <nav id="mobile-menu">
                                 <ul>
                                     <li class="has-sub">
-                                        <a href="index.html">Home</a>
-                                        <ul>
-                                            <li><a href="index.html">Home Page 01</a></li>
-                                            <li><a href="index-2.html">Home Page 02</a></li>
-                                        </ul>
+                                        <a href="/">Home</a>
+{{--                                        <ul>--}}
+{{--                                            <li><a href="index.html">Home Page 01</a></li>--}}
+{{--                                            <li><a href="index-2.html">Home Page 02</a></li>--}}
+{{--                                        </ul>--}}
                                     </li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="apartments.html">Apartments </a></li>
-                                    <li class="has-sub"><a href="#">Other Page</a>
-                                        <ul>
-                                            <li><a href="pricing.html">Pricing</a></li>
-                                            <li><a href="team.html">Team</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="contact.html" class="top-btn">SINGUP</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Projects </a></li>
+{{--                                    <li><a href="#">Apartments </a></li>--}}
+{{--                                    <li class="has-sub"><a href="#">Other Page</a>--}}
+{{--                                        <ul>--}}
+{{--                                            <li><a href="pricing.html">Pricing</a></li>--}}
+{{--                                            <li><a href="team.html">Team</a></li>--}}
+{{--                                            <li><a href="gallery.html">Gallery</a></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#" class="top-btn">Contact</a></li>
+{{--                                    <li><a href="#" class="top-btn">SINGUP</a></li>--}}
                                 </ul>
                             </nav>
                         </div>

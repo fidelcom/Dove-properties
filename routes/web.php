@@ -45,6 +45,7 @@ use Illuminate\Support\Facades\Route;
 */
 // User route
 Route::get('/', [LandingController::class, 'index'])->name('landing');
+Route::get('/contact.us', [LandingController::class, 'contactUs'])->name('landing.contact.us');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/show/{id}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/blog/categories/{id}', [BlogController::class, 'category'])->name('blog.categories');

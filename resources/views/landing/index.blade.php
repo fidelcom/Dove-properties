@@ -173,89 +173,92 @@
                 <div class="col-xl-8 col-lg-10">
                     <div class="section-title text-center pl-40 pr-40 mb-80">
                         <span>Best Work</span>
-                        <h2>Interior Views</h2>
+                        <h2>Our Projects</h2>
                     </div>
                 </div>
             </div>
             <div class="row services-active">
-                <div class="col-xl-4">
-                    <div class="single-services mb-30">
-                        <div class="services-thumb">
-                            <a class="gallery-link popup-image" href="{{ asset('landing/img/gallery/gallery.jpg') }}">
-                                <img src="{{ asset('landing/img/gallery/gallery.jpg') }}" alt="img">
-                            </a>
-                        </div>
-                        <div class="services-content">
-                            <small>Explore Now</small>
-                            <h4><a href="apartments-details.html">One Room Apartment</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="single-services mb-30">
-                        <div class="services-thumb">
-                            <a class="gallery-link popup-image" href="{{ asset('landing/img/gallery/gallery02.jpg') }}">
-                                <img src="{{ asset('landing/img/gallery/gallery02.jpg') }}" alt="img">
-                            </a>
-                        </div>
-                        <div class="services-content">
-                            <small>Explore Now</small>
-                            <h4><a href="apartments-details.html">Luxury Apartment</a></h4>
+                @foreach($projects as $project)
+                    <div class="col-xl-4">
+                        <div class="single-services mb-30">
+                            <div class="services-thumb">
+                                <a class="gallery-link popup-image" href="{{ asset($project->image) }}">
+                                    <img src="{{ asset($project->image) }}" alt="img">
+                                </a>
+                            </div>
+                            <div class="services-content">
+                                <small>Explore Now</small>
+                                <h4><a href="apartments-details.html">{{ $project->title }}</a></h4>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="single-services mb-30">
-                        <div class="services-thumb">
-                            <a class="gallery-link popup-image" href="{{ asset('landing/img/gallery/gallery03.jpg') }}">
-                                <img src="{{ asset('landing/img/gallery/gallery03.jpg') }}" alt="img">
-                            </a>
-                        </div>
-                        <div class="services-content">
-                            <small>Explore Now</small>
-                            <h4><a href="apartments-details.html">Deluxe Apartment</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="single-services mb-30">
-                        <div class="services-thumb">
-                            <a class="gallery-link popup-image" href="{{ asset('landing/img/gallery/gallery.jpg') }}">
-                                <img src="{{ asset('landing/img/gallery/gallery.jpg') }}" alt="img">
-                            </a>
-                        </div>
-                        <div class="services-content">
-                            <small>Explore Now</small>
-                            <h4><a href="apartments-details.html">One Room Apartment</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="single-services mb-30">
-                        <div class="services-thumb">
-                            <a class="gallery-link popup-image" href="{{ asset('landing/img/gallery/gallery02.jpg') }}">
-                                <img src="{{ asset('landing/img/gallery/gallery02.jpg') }}" alt="img">
-                            </a>
-                        </div>
-                        <div class="services-content">
-                            <small>Explore Now</small>
-                            <h4><a href="apartments-details.html">Luxury Apartment</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="single-services mb-30">
-                        <div class="services-thumb">
-                            <a class="gallery-link popup-image" href="{{ asset('landing/img/gallery/gallery03.jpg') }}">
-                                <img src="{{ asset('landing/img/gallery/gallery03.jpg') }}" alt="img">
-                            </a>
-                        </div>
-                        <div class="services-content">
-                            <small>Explore Now</small>
-                            <h4><a href="apartments-details.html">Deluxe Apartment</a></h4>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+{{--                <div class="col-xl-4">--}}
+{{--                    <div class="single-services mb-30">--}}
+{{--                        <div class="services-thumb">--}}
+{{--                            <a class="gallery-link popup-image" href="{{ asset('landing/img/gallery/gallery02.jpg') }}">--}}
+{{--                                <img src="{{ asset('landing/img/gallery/gallery02.jpg') }}" alt="img">--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="services-content">--}}
+{{--                            <small>Explore Now</small>--}}
+{{--                            <h4><a href="apartments-details.html">Luxury Apartment</a></h4>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-4">--}}
+{{--                    <div class="single-services mb-30">--}}
+{{--                        <div class="services-thumb">--}}
+{{--                            <a class="gallery-link popup-image" href="{{ asset('landing/img/gallery/gallery03.jpg') }}">--}}
+{{--                                <img src="{{ asset('landing/img/gallery/gallery03.jpg') }}" alt="img">--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="services-content">--}}
+{{--                            <small>Explore Now</small>--}}
+{{--                            <h4><a href="apartments-details.html">Deluxe Apartment</a></h4>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-4">--}}
+{{--                    <div class="single-services mb-30">--}}
+{{--                        <div class="services-thumb">--}}
+{{--                            <a class="gallery-link popup-image" href="{{ asset('landing/img/gallery/gallery.jpg') }}">--}}
+{{--                                <img src="{{ asset('landing/img/gallery/gallery.jpg') }}" alt="img">--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="services-content">--}}
+{{--                            <small>Explore Now</small>--}}
+{{--                            <h4><a href="apartments-details.html">One Room Apartment</a></h4>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-4">--}}
+{{--                    <div class="single-services mb-30">--}}
+{{--                        <div class="services-thumb">--}}
+{{--                            <a class="gallery-link popup-image" href="{{ asset('landing/img/gallery/gallery02.jpg') }}">--}}
+{{--                                <img src="{{ asset('landing/img/gallery/gallery02.jpg') }}" alt="img">--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="services-content">--}}
+{{--                            <small>Explore Now</small>--}}
+{{--                            <h4><a href="apartments-details.html">Luxury Apartment</a></h4>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-4">--}}
+{{--                    <div class="single-services mb-30">--}}
+{{--                        <div class="services-thumb">--}}
+{{--                            <a class="gallery-link popup-image" href="{{ asset('landing/img/gallery/gallery03.jpg') }}">--}}
+{{--                                <img src="{{ asset('landing/img/gallery/gallery03.jpg') }}" alt="img">--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                        <div class="services-content">--}}
+{{--                            <small>Explore Now</small>--}}
+{{--                            <h4><a href="apartments-details.html">Deluxe Apartment</a></h4>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>
@@ -334,73 +337,73 @@
                             </div>
                             <div class="second-services-content2">
                                 <h5>{{ $service->title }} </h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc ididunt ut labore. </p>
+                                <p>{{ $service->short_desc }} </p>
                                 <a href="#">Read More</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
 
-                <div class="col-lg-4 col-md-6 mb-30">
-                    <div class="s-single-services wow fadeInUp  animated" data-animation="fadeInDown animated" data-delay=".2s" style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="services-ico2">
-                            <i class="far fa-building"></i>
-                        </div>
-                        <div class="second-services-content2">
-                            <h5>We’re Here To Make You Successful</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc ididunt ut labore. </p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-30">
-                    <div class="s-single-services wow fadeInUp  animated" data-animation="fadeInDown animated" data-delay=".2s" style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="services-ico2">
-                            <i class="fad fa-home"></i>
-                        </div>
-                        <div class="second-services-content2">
-                            <h5>Premium, Fresh Cuisine Made Onsite</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc ididunt ut labore. </p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-30">
-                    <div class="s-single-services wow fadeInUp  animated" data-animation="fadeInDown animated" data-delay=".2s" style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="services-ico2">
-                            <i class="fas fa-search-location"></i>
-                        </div>
-                        <div class="second-services-content2">
-                            <h5>Flexible, Contemporary & Included Spaces </h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc ididunt ut labore. </p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-30">
-                    <div class="s-single-services wow fadeInUp  animated" data-animation="fadeInDown animated" data-delay=".2s" style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="services-ico2">
-                            <i class="far fa-car-garage"></i>
-                        </div>
-                        <div class="second-services-content2">
-                            <h5>Human-Centered Design Friendly Spaces</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc ididunt ut labore. </p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-30">
-                    <div class="s-single-services wow fadeInUp  animated" data-animation="fadeInDown animated" data-delay=".2s" style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="services-ico2">
-                            <i class="fas fa-comments-alt"></i>
-                        </div>
-                        <div class="second-services-content2">
-                            <h5>Broker Cutting-Edge And Technology</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc ididunt ut labore. </p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="col-lg-4 col-md-6 mb-30">--}}
+{{--                    <div class="s-single-services wow fadeInUp  animated" data-animation="fadeInDown animated" data-delay=".2s" style="visibility: visible; animation-name: fadeInUp;">--}}
+{{--                        <div class="services-ico2">--}}
+{{--                            <i class="far fa-building"></i>--}}
+{{--                        </div>--}}
+{{--                        <div class="second-services-content2">--}}
+{{--                            <h5>We’re Here To Make You Successful</h5>--}}
+{{--                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc ididunt ut labore. </p>--}}
+{{--                            <a href="#">Read More</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-4 col-md-6 mb-30">--}}
+{{--                    <div class="s-single-services wow fadeInUp  animated" data-animation="fadeInDown animated" data-delay=".2s" style="visibility: visible; animation-name: fadeInUp;">--}}
+{{--                        <div class="services-ico2">--}}
+{{--                            <i class="fad fa-home"></i>--}}
+{{--                        </div>--}}
+{{--                        <div class="second-services-content2">--}}
+{{--                            <h5>Premium, Fresh Cuisine Made Onsite</h5>--}}
+{{--                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc ididunt ut labore. </p>--}}
+{{--                            <a href="#">Read More</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-4 col-md-6 mb-30">--}}
+{{--                    <div class="s-single-services wow fadeInUp  animated" data-animation="fadeInDown animated" data-delay=".2s" style="visibility: visible; animation-name: fadeInUp;">--}}
+{{--                        <div class="services-ico2">--}}
+{{--                            <i class="fas fa-search-location"></i>--}}
+{{--                        </div>--}}
+{{--                        <div class="second-services-content2">--}}
+{{--                            <h5>Flexible, Contemporary & Included Spaces </h5>--}}
+{{--                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc ididunt ut labore. </p>--}}
+{{--                            <a href="#">Read More</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-4 col-md-6 mb-30">--}}
+{{--                    <div class="s-single-services wow fadeInUp  animated" data-animation="fadeInDown animated" data-delay=".2s" style="visibility: visible; animation-name: fadeInUp;">--}}
+{{--                        <div class="services-ico2">--}}
+{{--                            <i class="far fa-car-garage"></i>--}}
+{{--                        </div>--}}
+{{--                        <div class="second-services-content2">--}}
+{{--                            <h5>Human-Centered Design Friendly Spaces</h5>--}}
+{{--                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc ididunt ut labore. </p>--}}
+{{--                            <a href="#">Read More</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-4 col-md-6 mb-30">--}}
+{{--                    <div class="s-single-services wow fadeInUp  animated" data-animation="fadeInDown animated" data-delay=".2s" style="visibility: visible; animation-name: fadeInUp;">--}}
+{{--                        <div class="services-ico2">--}}
+{{--                            <i class="fas fa-comments-alt"></i>--}}
+{{--                        </div>--}}
+{{--                        <div class="second-services-content2">--}}
+{{--                            <h5>Broker Cutting-Edge And Technology</h5>--}}
+{{--                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc ididunt ut labore. </p>--}}
+{{--                            <a href="#">Read More</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
             </div>
 
@@ -408,14 +411,15 @@
     </section>
     <!-- services-area-end -->
     <!-- cta-area -->
-    <section class="cta-area cta-bg pt-120 pb-120" style="background-image:url(img/bg/cta_bg02.jpg)">
+    <section class="cta-area cta-bg pt-120 pb-120" style="background-image:url(landing/img/bg/cta_bg02.jpg)">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-12">
                     <div class="section-title cta-title wow fadeInLeft animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <p>Don’t hestitate to contact us</p>
+                        <p>Don’t hesitate to contact us</p>
                         <h2>MAKE AN APPOINTMENT NOW</h2>
-                        <h3>666 888 0000</h3>
+                        <h3>{{ $contact->phone }}</h3>
+                        <p>{{ $contact->address }}</p>
                         <div class="cta-btn s-cta-btn wow fadeInRight animated mt-30" data-animation="fadeInDown animated" data-delay=".2s">
                             <a href="#" class="btn">Contact Us</a>
                         </div>
@@ -446,10 +450,13 @@
                 <div class="col-lg-6">
                     <nav>
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Penthouse</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Studio</a>
-                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Duplex</a>
-                            <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false"> Dubble Height</a>
+                            @foreach($projectCategories as $key => $cat)
+                                <a class="nav-item nav-link {{ $key == 0 ? 'active' : '' }}" id="nav-{{ Str::slug($cat->name) }}-tab" data-toggle="tab" href="#nav-{{ Str::slug($cat->name) }}" role="tab" aria-controls="nav-{{ Str::slug($cat->name) }}" aria-selected="true">{{ $cat->name }}</a>
+                            @endforeach
+
+{{--                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Studio</a>--}}
+{{--                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Duplex</a>--}}
+{{--                            <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false"> Dubble Height</a>--}}
                         </div>
                     </nav>
                 </div>
@@ -457,88 +464,95 @@
                 </div>
                 <div class="col-lg-12 ">
                     <div class="tab-content py-3 px-3 px-sm-0 mt-50" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <p>There are many variations of passages of psum available, but the majority have  alteration in some form, by injected humour, or randomised words which don't look even believable.</p>
-                                    <p>If you are going to use a passage of lorem ipsum is simply free text, you need to be sure there isn't anything embarrassing hidden.</p>
-                                    <ul>
-                                        <li>FLOOR NO <span class="after"> 6</span></li>
-                                        <li>ROOMS <span class="after"> 7</span></li>
-                                        <li>TOTAL AREA / SQFT <span class="after"> 2800</span></li>
-                                        <li>PARKING <span class="after"> 1</span></li>
-                                        <li>PRICE <span class="after"> 2500$/Month</span></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="apartments-img">
-                                        <img src="{{ asset('landing/img/floor-chart.jpg') }}" alt="floor-chart"/>
+                        @foreach($projectCategories as $key => $cat)
+                            @foreach($cat->project as $index => $project)
+                                <div class="tab-pane fade show {{ $key == 0 && $index == 0 ? 'active' : '' }}" id="nav-{{ Str::slug($cat->name) }}" role="tabpanel" aria-labelledby="nav-{{ Str::slug($cat->name) }}-tab">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <p>{!! $project->long_desc !!}</p>
+                                            <ul>
+                                                <li>CLIENT <span class="after"> {{ $project->client }}</span></li>
+                                                <li>LOCATION <span class="after"> {{ $project->location }}</span></li>
+                                                <li>YEAR <span class="after"> {{ $project->year }}</span></li>
+{{--                                                <li>FLOOR NO <span class="after"> 6</span></li>--}}
+{{--                                                <li>ROOMS <span class="after"> 7</span></li>--}}
+{{--                                                <li>TOTAL AREA / SQFT <span class="after"> 2800</span></li>--}}
+{{--                                                <li>PARKING <span class="after"> 1</span></li>--}}
+{{--                                                <li>PRICE <span class="after"> 2500$/Month</span></li>--}}
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="apartments-img">
+                                                <img src="{{ asset($project->image) }}" alt="floor-chart"/>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
-                        </div>
-                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <p>There are many variations of passages of psum available, but the majority have  alteration in some form, by injected humour, or randomised words which don't look even believable.</p>
-                                    <p>If you are going to use a passage of lorem ipsum is simply free text, you need to be sure there isn't anything embarrassing hidden.</p>
-                                    <ul>
-                                        <li>FLOOR NO <span class="after"> 10</span></li>
-                                        <li>ROOMS <span class="after"> 5</span></li>
-                                        <li>TOTAL AREA / SQFT <span class="after"> 2500</span></li>
-                                        <li>PARKING <span class="after"> 1</span></li>
-                                        <li>PRICE <span class="after"> 3500$/Month</span></li>
-                                    </ul>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="apartments-img">
-                                        <img src="{{ asset('landing/img/floor-chart.jpg') }}" alt="floor-chart"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                            <div class="row">
+                            @endforeach
+                        @endforeach
 
-                                <div class="col-lg-6">
-                                    <p>There are many variations of passages of psum available, but the majority have  alteration in some form, by injected humour, or randomised words which don't look even believable.</p>
-                                    <p>If you are going to use a passage of lorem ipsum is simply free text, you need to be sure there isn't anything embarrassing hidden.</p>
-                                    <ul>
-                                        <li>FLOOR NO <span class="after"> 25</span></li>
-                                        <li>ROOMS <span class="after"> 18</span></li>
-                                        <li>TOTAL AREA / SQFT <span class="after"> 2800</span></li>
-                                        <li>PARKING <span class="after"> 1</span></li>
-                                        <li>PRICE <span class="after"> 112999$/Month</span></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="apartments-img">
-                                        <img src="{{ asset('landing/img/floor-chart.jpg') }}" alt="floor-chart"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <p>There are many variations of passages of psum available, but the majority have  alteration in some form, by injected humour, or randomised words which don't look even believable.</p>
-                                    <p>If you are going to use a passage of lorem ipsum is simply free text, you need to be sure there isn't anything embarrassing hidden.</p>
-                                    <ul>
-                                        <li>FLOOR NO <span class="after"> 16</span></li>
-                                        <li>ROOMS <span class="after"> 5</span></li>
-                                        <li>TOTAL AREA / SQFT <span class="after"> 1800</span></li>
-                                        <li>PARKING <span class="after"> 1</span></li>
-                                        <li>PRICE <span class="after"> 3000$/Month</span></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="apartments-img">
-                                        <img src="{{ asset('landing/img/floor-chart.jpg') }}" alt="floor-chart"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-lg-6">--}}
+{{--                                    <p>There are many variations of passages of psum available, but the majority have  alteration in some form, by injected humour, or randomised words which don't look even believable.</p>--}}
+{{--                                    <p>If you are going to use a passage of lorem ipsum is simply free text, you need to be sure there isn't anything embarrassing hidden.</p>--}}
+{{--                                    <ul>--}}
+{{--                                        <li>FLOOR NO <span class="after"> 10</span></li>--}}
+{{--                                        <li>ROOMS <span class="after"> 5</span></li>--}}
+{{--                                        <li>TOTAL AREA / SQFT <span class="after"> 2500</span></li>--}}
+{{--                                        <li>PARKING <span class="after"> 1</span></li>--}}
+{{--                                        <li>PRICE <span class="after"> 3500$/Month</span></li>--}}
+{{--                                    </ul>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-lg-6">--}}
+{{--                                    <div class="apartments-img">--}}
+{{--                                        <img src="{{ asset('landing/img/floor-chart.jpg') }}" alt="floor-chart"/>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">--}}
+{{--                            <div class="row">--}}
+
+{{--                                <div class="col-lg-6">--}}
+{{--                                    <p>There are many variations of passages of psum available, but the majority have  alteration in some form, by injected humour, or randomised words which don't look even believable.</p>--}}
+{{--                                    <p>If you are going to use a passage of lorem ipsum is simply free text, you need to be sure there isn't anything embarrassing hidden.</p>--}}
+{{--                                    <ul>--}}
+{{--                                        <li>FLOOR NO <span class="after"> 25</span></li>--}}
+{{--                                        <li>ROOMS <span class="after"> 18</span></li>--}}
+{{--                                        <li>TOTAL AREA / SQFT <span class="after"> 2800</span></li>--}}
+{{--                                        <li>PARKING <span class="after"> 1</span></li>--}}
+{{--                                        <li>PRICE <span class="after"> 112999$/Month</span></li>--}}
+{{--                                    </ul>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-lg-6">--}}
+{{--                                    <div class="apartments-img">--}}
+{{--                                        <img src="{{ asset('landing/img/floor-chart.jpg') }}" alt="floor-chart"/>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-lg-6">--}}
+{{--                                    <p>There are many variations of passages of psum available, but the majority have  alteration in some form, by injected humour, or randomised words which don't look even believable.</p>--}}
+{{--                                    <p>If you are going to use a passage of lorem ipsum is simply free text, you need to be sure there isn't anything embarrassing hidden.</p>--}}
+{{--                                    <ul>--}}
+{{--                                        <li>FLOOR NO <span class="after"> 16</span></li>--}}
+{{--                                        <li>ROOMS <span class="after"> 5</span></li>--}}
+{{--                                        <li>TOTAL AREA / SQFT <span class="after"> 1800</span></li>--}}
+{{--                                        <li>PARKING <span class="after"> 1</span></li>--}}
+{{--                                        <li>PRICE <span class="after"> 3000$/Month</span></li>--}}
+{{--                                    </ul>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-lg-6">--}}
+{{--                                    <div class="apartments-img">--}}
+{{--                                        <img src="{{ asset('landing/img/floor-chart.jpg') }}" alt="floor-chart"/>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
 
                 </div>
@@ -552,141 +566,141 @@
     <!-- apartments-area-end -->
 
     <!-- apartments-area -->
-    <section class="apartments pt-120 pb-90" style="background:#f5f5f5;">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-10">
-                    <div class="section-title text-center pl-40 pr-40 mb-80 wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <span>Our Plans</span>
-                        <h2> Select Availability</h2>
-                    </div>
-                </div>
-            </div>
+{{--    <section class="apartments pt-120 pb-90" style="background:#f5f5f5;">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row justify-content-center">--}}
+{{--                <div class="col-xl-8 col-lg-10">--}}
+{{--                    <div class="section-title text-center pl-40 pr-40 mb-80 wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">--}}
+{{--                        <span>Our Plans</span>--}}
+{{--                        <h2> Select Availability</h2>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="row">
+{{--            <div class="row">--}}
 
-                <div class="col-lg-12 ">
-                    <div class="availability-section">
-                        <div class="availability-table">
-                            <table class="table text-center">
-                                <thead>
-                                <tr>
-                                    <th scope="col">residence</th>
-                                    <th scope="col">bed/bath</th>
-                                    <th scope="col">SQ.FT</th>
-                                    <th scope="col">sale price</th>
-                                    <th scope="col">rent price</th>
-                                    <th scope="col">floor plan</th>
-                                </tr>
-                                </thead>
-                                <tbody>
+{{--                <div class="col-lg-12 ">--}}
+{{--                    <div class="availability-section">--}}
+{{--                        <div class="availability-table">--}}
+{{--                            <table class="table text-center">--}}
+{{--                                <thead>--}}
+{{--                                <tr>--}}
+{{--                                    <th scope="col">residence</th>--}}
+{{--                                    <th scope="col">bed/bath</th>--}}
+{{--                                    <th scope="col">SQ.FT</th>--}}
+{{--                                    <th scope="col">sale price</th>--}}
+{{--                                    <th scope="col">rent price</th>--}}
+{{--                                    <th scope="col">floor plan</th>--}}
+{{--                                </tr>--}}
+{{--                                </thead>--}}
+{{--                                <tbody>--}}
 
-                                <tr>
-                                    <td class="name">RESIDENT TOWER	</td>
-                                    <td>3/1	</td>
-                                    <td>700</td>
-                                    <td class="price">$66800</td>
-                                    <td class="price">$700/m</td>
-                                    <td>
-                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>
-                                    </td>
+{{--                                <tr>--}}
+{{--                                    <td class="name">RESIDENT TOWER	</td>--}}
+{{--                                    <td>3/1	</td>--}}
+{{--                                    <td>700</td>--}}
+{{--                                    <td class="price">$66800</td>--}}
+{{--                                    <td class="price">$700/m</td>--}}
+{{--                                    <td>--}}
+{{--                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>--}}
+{{--                                    </td>--}}
 
-                                </tr>
-
-
-                                <tr>
-                                    <td class="name">UNIQ VILLA	</td>
-                                    <td>4/2	</td>
-                                    <td>1200</td>
-                                    <td class="price">$56800</td>
-                                    <td class="price">-</td>
-                                    <td>
-                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>
-                                    </td>
-
-                                </tr>
+{{--                                </tr>--}}
 
 
-                                <tr>
-                                    <td class="name">LOCAL TOWER	</td>
-                                    <td>4/1	</td>
-                                    <td>120</td>
-                                    <td class="price">$9000</td>
-                                    <td class="price">-</td>
-                                    <td>
-                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>
-                                    </td>
+{{--                                <tr>--}}
+{{--                                    <td class="name">UNIQ VILLA	</td>--}}
+{{--                                    <td>4/2	</td>--}}
+{{--                                    <td>1200</td>--}}
+{{--                                    <td class="price">$56800</td>--}}
+{{--                                    <td class="price">-</td>--}}
+{{--                                    <td>--}}
+{{--                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>--}}
+{{--                                    </td>--}}
 
-                                </tr>
-
-
-                                <tr>
-                                    <td class="name">RED CITY</td>
-                                    <td>6/2	</td>
-                                    <td>8500</td>
-                                    <td class="price">$909800</td>
-                                    <td class="price">-</td>
-                                    <td>
-                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>
-                                    </td>
-
-                                </tr>
+{{--                                </tr>--}}
 
 
-                                <tr>
-                                    <td class="name">ZCUBE TOWER	</td>
-                                    <td>5/2</td>
-                                    <td>1800</td>
-                                    <td class="price">-</td>
-                                    <td class="price">$2000/M</td>
-                                    <td>
-                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>
-                                    </td>
+{{--                                <tr>--}}
+{{--                                    <td class="name">LOCAL TOWER	</td>--}}
+{{--                                    <td>4/1	</td>--}}
+{{--                                    <td>120</td>--}}
+{{--                                    <td class="price">$9000</td>--}}
+{{--                                    <td class="price">-</td>--}}
+{{--                                    <td>--}}
+{{--                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>--}}
+{{--                                    </td>--}}
 
-                                </tr>
-
-
-                                <tr>
-                                    <td class="name">ALANI MENTION</td>
-                                    <td>6/2</td>
-                                    <td>2400</td>
-                                    <td class="price">$20000</td>
-                                    <td class="price">$2000/w</td>
-                                    <td>
-                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>
-                                    </td>
-
-                                </tr>
+{{--                                </tr>--}}
 
 
-                                <tr>
-                                    <td class="name">JACKSTOCK TOWER</td>
-                                    <td>3/1</td>
-                                    <td>1200</td>
-                                    <td class="price">-</td>
-                                    <td class="price">$400/m</td>
-                                    <td>
-                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>
-                                    </td>
+{{--                                <tr>--}}
+{{--                                    <td class="name">RED CITY</td>--}}
+{{--                                    <td>6/2	</td>--}}
+{{--                                    <td>8500</td>--}}
+{{--                                    <td class="price">$909800</td>--}}
+{{--                                    <td class="price">-</td>--}}
+{{--                                    <td>--}}
+{{--                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>--}}
+{{--                                    </td>--}}
 
-                                </tr>
-
-
+{{--                                </tr>--}}
 
 
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+{{--                                <tr>--}}
+{{--                                    <td class="name">ZCUBE TOWER	</td>--}}
+{{--                                    <td>5/2</td>--}}
+{{--                                    <td>1800</td>--}}
+{{--                                    <td class="price">-</td>--}}
+{{--                                    <td class="price">$2000/M</td>--}}
+{{--                                    <td>--}}
+{{--                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>--}}
+{{--                                    </td>--}}
 
-                </div>
-            </div>
-        </div>
-        </div>
+{{--                                </tr>--}}
 
 
-        </div>
-    </section>
+{{--                                <tr>--}}
+{{--                                    <td class="name">ALANI MENTION</td>--}}
+{{--                                    <td>6/2</td>--}}
+{{--                                    <td>2400</td>--}}
+{{--                                    <td class="price">$20000</td>--}}
+{{--                                    <td class="price">$2000/w</td>--}}
+{{--                                    <td>--}}
+{{--                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>--}}
+{{--                                    </td>--}}
+
+{{--                                </tr>--}}
+
+
+{{--                                <tr>--}}
+{{--                                    <td class="name">JACKSTOCK TOWER</td>--}}
+{{--                                    <td>3/1</td>--}}
+{{--                                    <td>1200</td>--}}
+{{--                                    <td class="price">-</td>--}}
+{{--                                    <td class="price">$400/m</td>--}}
+{{--                                    <td>--}}
+{{--                                        <a class="btn popup-image" href="{{ asset('landing/img/floor-chart.jpg') }}" data-elementor-open-lightbox="yes">view now </a>--}}
+{{--                                    </td>--}}
+
+{{--                                </tr>--}}
+
+
+
+
+{{--                                </tbody>--}}
+{{--                            </table>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        </div>--}}
+
+
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- apartments-area-end -->
 
     <!-- services-area -->
@@ -774,50 +788,31 @@
     <!-- services-area-end -->
 
     <!-- testimonial-area -->
-    <section id="testimonios" class="testimonial-area gray-bg testimonial-p pt-115 pb-185 text-center" style="background-image:url(img/testimonial/test-bg.jpg)">
+    <section id="testimonios" class="testimonial-area gray-bg testimonial-p pt-115 pb-185 text-center" style="background-image:url(landing/img/testimonial/test-bg.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2">
                 </div>
                 <div class="col-lg-8">
                     <div class="section-title center-align mb-40 wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <span>Experice With me</span>
+                        <span>Experience With me</span>
                         <h2>Testimonios</h2>
                     </div>
                     <div class="testimonial-active">
-                        <div class="single-testimonial">
-                            <i class="fas fa-quote-left"></i>
-                            <p>“Nam liber tempor cum soluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper .</p>
-                            <div class="testi-author text-center">
-                                <img src="{{ asset('landing/img/testimonial/testi_avatar.png') }}" alt="img">
-                                <div class="ta-info">
-                                    <h6>Mr Jone Dose</h6>
-                                    <span>Web Developer</span>
+                        @foreach($testimonials as $testimonial)
+                            <div class="single-testimonial">
+                                <i class="fas fa-quote-left"></i>
+                                <p>{!! $testimonial->desc !!} </p>
+                                <div class="testi-author text-center">
+                                    <img class="rounded-circle" src="{{ asset($testimonial->image) }}" width="70" alt="img">
+                                    <div class="ta-info">
+                                        <h6>{{ $testimonial->name }}</h6>
+                                        <span>{{ $testimonial->location }}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="single-testimonial">
-                            <i class="fas fa-quote-left"></i>
-                            <p>“Nam liber tempor cum soluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper .</p>
-                            <div class="testi-author text-center">
-                                <img src="{{ asset('landing/img/testimonial/testi_avatar.png') }}" alt="img">
-                                <div class="ta-info">
-                                    <h6>Margie R. Robinson</h6>
-                                    <span>Web Developer</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial">
-                            <i class="fas fa-quote-left"></i>
-                            <p>“Nam liber tempor cum soluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper .</p>
-                            <div class="testi-author text-center">
-                                <img src="{{ asset('landing/img/testimonial/testi_avatar.png') }}" alt="img">
-                                <div class="ta-info">
-                                    <h6>Mr Jone Dose</h6>
-                                    <span>Web Developer</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
                 <div class="col-lg-2">
@@ -840,58 +835,26 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-post mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <div class="blog-thumb">
-                            <a href="blog-details.html"><img src="{{ asset('landing/img/blog/blog_img01.jpg') }}" alt="img"></a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="b-meta mb-20">
-                                <ul>
-                                    <li><a href="#">By admin .</a></li>
-                                    <li><a href="#">5 Dec 2019 .</a></li>
-                                    <li><a href="#" class="corpo">Real este </a></li>
-                                </ul>
+                @foreach($posts as $post)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-post mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
+                            <div class="blog-thumb">
+                                <a href="blog-details.html"><img src="{{ asset($post->image) }}" alt="img"></a>
                             </div>
-                            <h4><a href="blog-details.html">Making Distribut Product Team
-                                    Work More With Monday</a></h4>
+                            <div class="blog-content">
+                                <div class="b-meta mb-20">
+                                    <ul>
+                                        <li><a href="#">By {{ $post->author }} .</a></li>
+                                        <li><a href="#">{{ $post->created_at->diffForHumans() }} .</a></li>
+                                        <li><a href="#" class="corpo">{{ $post->blog_category->name }} </a></li>
+                                    </ul>
+                                </div>
+                                <h4><a href="blog-details.html">{{ $post->title }}</a></h4>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-post active mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <div class="blog-thumb">
-                            <a href="blog-details.html"><img src="{{ asset('landing/img/blog/blog_img02.jpg') }}" alt="img"></a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="b-meta mb-20">
-                                <ul>
-                                    <li><a href="#">By admin .</a></li>
-                                    <li><a href="#">5 Dec 2019 .</a></li>
-                                    <li><a href="#" class="corpo">Real este </a></li>
-                                </ul>
-                            </div>
-                            <h4><a href="blog-details.html">Monthly Web Development Upto Cost Of JavaScript Ethics</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-post mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <div class="blog-thumb">
-                            <a href="blog-details.html"><img src="{{ asset('landing/img/blog/blog_img03.jpg') }}" alt="img"></a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="b-meta mb-20">
-                                <ul>
-                                    <li><a href="#">By admin .</a></li>
-                                    <li><a href="#">5 Dec 2019 .</a></li>
-                                    <li><a href="#" class="corpo">Real este </a></li>
-                                </ul>
-                            </div>
-                            <h4><a href="blog-details.html">User Experience Psychology And Performance Smashing</a></h4>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>
@@ -904,7 +867,7 @@
                 <div class="col-xl-7 col-lg-8">
                     <div class="section-title text-center mb-80 wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
                         <span>Contact</span>
-                        <h2>Get In Tuch</h2>
+                        <h2>Get In Touch</h2>
                     </div>
                 </div>
             </div>
@@ -916,8 +879,7 @@
                                 <i class="far fa-map"></i>
                             </div>
                             <h5>Office Address</h5>
-                            <p>380 St Kilda Road, Melbourne <br>
-                                VIC 3004, Australia</p>
+                            <p>{{ $contact->address }}</p>
                         </div>
                         <div class="single-cta pb-30 mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
                             <div class="f-cta-icon">
@@ -933,27 +895,33 @@
                             </div>
                             <h5>Message Us</h5>
                             <p>We are always with you to solve your problem
-                                mail us : <a href="#">support@example.com</a></p>
+                                mail us : <a href="#">{{ $contact->email }}</a></p>
                         </div>
                     </div>
 
                 </div>
                 <div class="col-lg-8">
-                    <form action="#" class="contact-form wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
+                    <form action="{{ route('landing.contact.us') }}" class="contact-form wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="contact-field p-relative c-name mb-40">
-                                    <input type="text" placeholder="Write here  Jhonathan Doe">
+                                    <input type="text" name="name" placeholder="Write here  Jhonathan Doe">
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="contact-field p-relative c-email mb-40">
-                                    <input type="text" placeholder="Write here youremail">
+                                    <input type="text" name="email" placeholder="Write here youremail">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="contact-field p-relative c-email mb-40">
+                                    <input type="text" name="phone" placeholder="Write here Phone number 08012345678">
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="contact-field p-relative c-subject mb-40">
-                                    <input type="text" placeholder="I would like to discuss">
+                                    <input type="text" name="subject" placeholder="I would like to discuss">
                                 </div>
                             </div>
                             <div class="col-lg-12">

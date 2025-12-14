@@ -33,9 +33,9 @@ class ContactUsController extends Controller
             'message' => $request->message,
             'status' => 0
         ]);
-        return response()->json(
-            'Your message has been sent successfully!',
-        );
+//        return response()->json(
+//            'Your message has been sent successfully!',
+//        );
 
 //        return redirect()->back()->with([
 //            'message' => 'Your message has been sent successfully!',

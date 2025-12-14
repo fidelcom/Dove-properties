@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Contact;
+use App\Models\GetInTouch;
 use App\Models\Post;
 use App\Models\Project;
 use App\Models\ProjectCategory;
@@ -17,11 +19,40 @@ class LandingController extends Controller
     {
         $about = About::first();
         $posts = Post::latest()->limit(3)->get();
-        $projectCategories = ProjectCategory::all();
+        $projectCategories = ProjectCategory::with('project')->get();
         $projects = Project::latest()->get();
         $sliders = Slider::latest()->get();
         $testimonials = Testimonial::latest()->get();
         $services = Service::latest()->get();
-        return view('landing.index', compact('about', 'posts', 'projectCategories', 'projects', 'sliders', 'testimonials', 'services'));
+        $contact  = Contact::first();
+        return view('landing.index', compact('about', 'posts', 'projectCategories', 'projects', 'sliders', 'testimonials', 'services', 'contact'));
+    }
+
+    public function contactUs(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'subject' => 'required',
+            'message' => 'required'
+        ]);
+
+        GetInTouch::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'subject' => $request->subject,
+            'message' => $request->message,
+            'status' => 0
+        ]);
+//        return response()->json(
+//            'Your message has been sent successfully!',
+//        );
+
+        return redirect()->back()->with([
+            'message' => 'Your message has been sent successfully!',
+            'alert-type' => 'success'
+        ]);
     }
 }
