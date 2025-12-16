@@ -40,7 +40,7 @@ class PartnerController extends Controller
         $img = $request->file('image');
         $img_name = hexdec(uniqid()).'.'.$img->getClientOriginalExtension();
         $manager = new ImageManager(new Driver());
-        $manager->read($img)->resize(218, 125)->toPng()->save('upload/partners/'.$img_name);
+        $manager->read($img)->scale(150, 60)->toPng()->save('upload/partners/'.$img_name);
         $filename = 'upload/partners/'.$img_name;
 
         Partner::create([
@@ -86,12 +86,11 @@ class PartnerController extends Controller
             $img = $request->file('image');
             $img_name = hexdec(uniqid()).'.'.$img->getClientOriginalExtension();
             $manager = new ImageManager(new Driver());
-            $manager->read($img)->resize(218, 125)->toPng()->save('upload/partners/'.$img_name);
+            $manager->read($img)->scale(150, 60)->toPng()->save('upload/partners/'.$img_name);
             $filename = 'upload/partners/'.$img_name;
 
-            if ($data->image)
-            {
-                unlink($data->image);
+            if ($data->image && file_exists($data->image)) {
+                unlink(public_path($data->image));
             }
 
             $data->update([
@@ -124,9 +123,9 @@ class PartnerController extends Controller
     {
         $data = Partner::findOrFail($id);
         if ($data->image)
-        {
-            unlink($data->image);
-        }
+            if ($data->image && file_exists($data->image)) {
+                unlink(public_path($data->image));
+            }
         $data->delete();
         return redirect()->route('partners.index')->with([
             'message' => 'Partner deleted successfully!',

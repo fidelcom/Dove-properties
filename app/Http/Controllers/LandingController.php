@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Contact;
 use App\Models\GetInTouch;
+use App\Models\Partner;
 use App\Models\Post;
 use App\Models\Project;
 use App\Models\ProjectCategory;
 use App\Models\Service;
 use App\Models\Slider;
+use App\Models\Success;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -25,7 +27,9 @@ class LandingController extends Controller
         $testimonials = Testimonial::latest()->get();
         $services = Service::latest()->get();
         $contact  = Contact::first();
-        return view('landing.index', compact('about', 'posts', 'projectCategories', 'projects', 'sliders', 'testimonials', 'services', 'contact'));
+        $successes = Success::all();
+        $brands = Partner::all();
+        return view('landing.index', compact('about', 'posts', 'projectCategories', 'projects', 'sliders', 'testimonials', 'services', 'contact', 'successes', 'brands'));
     }
 
     public function contactUs(Request $request)

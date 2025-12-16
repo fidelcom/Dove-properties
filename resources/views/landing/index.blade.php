@@ -13,22 +13,39 @@
                                 <div class="slider-content s-slider-content text-left">
                                     <h2 data-animation="fadeInUp" data-delay=".4s">{{ $slider->title }}</h2>
                                     <ul data-animation="fadeInUp" data-delay=".6s">
-                                        <li>
-                                            <i class="fas fa-bed"></i>
-                                            <span>3 Bedrooms.</span>
-                                        </li>
-                                        <li>
-                                            <i class="fal fa-pencil-ruler"></i>
-                                            <span>Square Feet </span>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-bath"></i>
-                                            <span>Bedrooms</span>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-car"></i>
-                                            <span>Car parking</span>
-                                        </li>
+                                        @foreach($successes as $key => $success)
+                                            @if($key == 0)
+                                                <li>
+                                                    <i class="fas fa-bed"></i>
+                                                    <span>{{ $success->title }}</span>
+                                                </li>
+                                            @elseif($key == 1)
+                                                <li>
+                                                    <i class="fal fa-pencil-ruler"></i>
+                                                    <span>{{ $success->title }} </span>
+                                                </li>
+                                            @elseif($key == 2)
+                                                <li>
+                                                    <i class="fas fa-bath"></i>
+                                                    <span>{{ $success->title }}</span>
+                                                </li>
+                                            @elseif($key == 3)
+                                                <li>
+                                                    <i class="fas fa-car"></i>
+                                                    <span>{{ $success->title }}</span>
+                                                </li>
+                                            @else
+                                                <li>
+                                                    <i class="fas fa-bed"></i>
+                                                    <span>{{ $success->title }}</span>
+                                                </li>
+                                            @endif
+
+                                        @endforeach
+
+
+
+
                                     </ul>
                                     <div class="slider-btn mt-55">
                                         <a href="#" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Get a Quote</a>
@@ -122,45 +139,66 @@
     <!-- about-area-end -->
 
     <!-- counter-area -->
-    <div class="counter-area pt-120 pb-90" style="background-image:url(img/bg/count-bg.jpg); background-size:cover;">
+    <div class="counter-area pt-120 pb-90" style="background-image:url(landing/img/bg/count-bg.jpg); background-size:cover;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-counter text-center mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <i class="fal fa-pencil-ruler"></i>
-                        <div class="counter p-relative">
-                            <span class="count">2543</span>
+                @foreach($successes as $key => $success)
+                    @if($key == 0)
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-counter text-center mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
+                                <i class="fal fa-pencil-ruler"></i>
+                                <div class="counter p-relative">
+                                    <span class="count">{{ $success->value }}</span>
+                                </div>
+                                <p>{{ $success->title }}</p>
+                            </div>
                         </div>
-                        <p>Square Feet</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-counter text-center mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <i class="fas fa-bath"></i>
-                        <div class="counter p-relative">
-                            <span class="count">4</span>
+                    @elseif($key == 1)
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-counter text-center mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
+                                <i class="fas fa-bath"></i>
+                                <div class="counter p-relative">
+                                    <span class="count">{{ $success->value }}</span>
+                                </div>
+                                <p>{{ $success->title }}</p>
+                            </div>
                         </div>
-                        <p>Bathrooms</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-counter text-center mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <i class="fas fa-bed"></i>
-                        <div class="counter p-relative">
-                            <span class="count">6</span>
+                    @elseif($key == 2)
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-counter text-center mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
+                                <i class="fas fa-bed"></i>
+                                <div class="counter p-relative">
+                                    <span class="count">{{ $success->value }}</span>
+                                </div>
+                                <p>{{ $success->title }}</p>
+                            </div>
                         </div>
-                        <p>Bedrooms</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-counter text-center mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <i class="fas fa-car"></i>
-                        <div class="counter p-relative">
-                            <span class="count">4</span>
+                    @elseif($key == 3)
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-counter text-center mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
+                                <i class="fas fa-car"></i>
+                                <div class="counter p-relative">
+                                    <span class="count">{{ $success->value }}</span>
+                                </div>
+                                <p>{{ $success->title }}</p>
+                            </div>
                         </div>
-                        <p>Car parking</p>
-                    </div>
-                </div>
+                    @else
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-counter text-center mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
+                                <i class="fal fa-pencil-ruler"></i>
+                                <div class="counter p-relative">
+                                    <span class="count">{{ $success->value }}</span>
+                                </div>
+                                <p>{{ $success->title }}</p>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+
+
+
+
             </div>
         </div>
     </div>
@@ -302,8 +340,8 @@
                                     </li>
                                 </ul>
                             </div>
-                            <h3>Price:</h3>
-                            <h2>$1,786.80</h2>
+{{--                            <h3>Price:</h3>--}}
+{{--                            <h2>$1,786.80</h2>--}}
                             <div class="choose-btn mt-30">
                                 <a href="#" class="btn">Contact Us</a>
                             </div>
@@ -944,41 +982,44 @@
     <div class="brand-area pt-60 pb-60" style="background-color:#d29751">
         <div class="container">
             <div class="row brand-active">
-                <div class="col-xl-2">
-                    <div class="single-brand">
-                        <img src="{{ asset('landing/img/brand/c-logo1.png') }}" alt="img">
+                @foreach($brands as $brand)
+                    <div class="col-xl-2">
+                        <div class="single-brand">
+                            <img src="{{ asset($brand->image) }}" alt="img">
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-2">
-                    <div class="single-brand">
-                        <img src="{{ asset('landing/img/brand/c-logo2.png') }}" alt="img">
-                    </div>
-                </div>
-                <div class="col-xl-2">
-                    <div class="single-brand">
-                        <img src="{{ asset('landing/img/brand/c-logo3.png') }}" alt="img">
-                    </div>
-                </div>
-                <div class="col-xl-2">
-                    <div class="single-brand">
-                        <img src="{{ asset('landing/img/brand/c-logo4.png') }}" alt="img">
-                    </div>
-                </div>
-                <div class="col-xl-2">
-                    <div class="single-brand">
-                        <img src="{{ asset('landing/img/brand/c-logo5.png') }}" alt="img">
-                    </div>
-                </div>
-                <div class="col-xl-2">
-                    <div class="single-brand">
-                        <img src="{{ asset('landing/img/brand/c-logo6.png') }}" alt="img">
-                    </div>
-                </div>
-                <div class="col-xl-2">
-                    <div class="single-brand">
-                        <img src="{{ asset('landing/img/brand/c-logo1.png') }}" alt="img">
-                    </div>
-                </div>
+                @endforeach
+
+{{--                <div class="col-xl-2">--}}
+{{--                    <div class="single-brand">--}}
+{{--                        <img src="{{ asset('landing/img/brand/c-logo2.png') }}" alt="img">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-2">--}}
+{{--                    <div class="single-brand">--}}
+{{--                        <img src="{{ asset('landing/img/brand/c-logo3.png') }}" alt="img">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-2">--}}
+{{--                    <div class="single-brand">--}}
+{{--                        <img src="{{ asset('landing/img/brand/c-logo4.png') }}" alt="img">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-2">--}}
+{{--                    <div class="single-brand">--}}
+{{--                        <img src="{{ asset('landing/img/brand/c-logo5.png') }}" alt="img">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-2">--}}
+{{--                    <div class="single-brand">--}}
+{{--                        <img src="{{ asset('landing/img/brand/c-logo6.png') }}" alt="img">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-2">--}}
+{{--                    <div class="single-brand">--}}
+{{--                        <img src="{{ asset('landing/img/brand/c-logo1.png') }}" alt="img">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
