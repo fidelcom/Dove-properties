@@ -73,7 +73,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 //Admin Routes
-Route::prefix('/admin')->group(function () {
+Route::middleware(['auth', 'role:admin'])->prefix('/admin')->group(function () {
     Route::resource('/dashboard', AdminController::class);
     Route::resource('/slider', SliderController::class);
     Route::resource('/services', ServicesController::class);

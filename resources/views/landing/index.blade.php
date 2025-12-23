@@ -226,7 +226,7 @@
                             </div>
                             <div class="services-content">
                                 <small>Explore Now</small>
-                                <h4><a href="apartments-details.html">{{ $project->title }}</a></h4>
+                                <h4><a href="#">{{ $project->title }}</a></h4>
                             </div>
                         </div>
                     </div>

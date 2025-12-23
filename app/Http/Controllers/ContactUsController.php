@@ -5,18 +5,21 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\GetInTouch;
 use App\Models\LetsTalk;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
 {
     public function index()
     {
-        $data = Contact::find(1);
-        return view('frontend.contact_us', compact('data'));
+        $contact = Contact::find(1);
+        $brands = Partner::all();
+        return view('landing.contact_us', compact('contact', 'brands'));
     }
 
     public function store(Request $request)
     {
+//        dd($request->all());
         $request->validate([
             'name' => 'required',
             'phone' => 'required',
@@ -24,6 +27,7 @@ class ContactUsController extends Controller
             'subject' => 'required',
             'message' => 'required'
         ]);
+
 
         GetInTouch::create([
             'name' => $request->name,
@@ -37,10 +41,10 @@ class ContactUsController extends Controller
 //            'Your message has been sent successfully!',
 //        );
 
-//        return redirect()->back()->with([
-//            'message' => 'Your message has been sent successfully!',
-//            'alert-type' => 'success'
-//        ]);
+        return redirect()->back()->with([
+            'message' => 'Your message has been sent successfully!',
+            'alert-type' => 'success'
+        ]);
     }
 
     public function show()
