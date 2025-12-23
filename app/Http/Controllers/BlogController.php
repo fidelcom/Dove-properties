@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BlogCategory;
+use App\Models\Contact;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -10,10 +11,11 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $posts = Post::latest()->get();
+        $posts = Post::latest()->paginate(4);
         $categories = BlogCategory::orderBy('name', 'ASC')->get();
         $latest = Post::latest()->limit(4)->get();
-        return view('frontend.blog.index', compact('posts', 'categories', 'latest'));
+        $contact = Contact::first();
+        return view('landing.blog.index', compact('posts', 'categories', 'latest', 'contact'));
     }
 
     public function show($id)
@@ -21,7 +23,8 @@ class BlogController extends Controller
         $post = Post::findOrFail($id);
         $categories = BlogCategory::orderBy('name', 'ASC')->get();
         $latest = Post::latest()->limit(4)->get();
-        return view('frontend.blog.show', compact('post', 'categories', 'latest'));
+        $contact = Contact::first();
+        return view('landing.blog.show', compact('post', 'categories', 'latest', 'contact'));
     }
 
     public function category($id)
@@ -30,6 +33,7 @@ class BlogController extends Controller
         $categories = BlogCategory::orderBy('name', 'ASC')->get();
         $ct = BlogCategory::findOrFail($id);
         $latest = Post::latest()->limit(4)->get();
-        return view('frontend.blog.category_post', compact('posts', 'categories', 'ct', 'latest'));
+        $contact = Contact::first();
+        return view('landing.blog.category_post', compact('posts', 'categories', 'ct', 'latest', 'contact'));
     }
 }

@@ -43,7 +43,7 @@ class ServicesController extends Controller
         $img = $request->file('image');
         $img_name = hexdec(uniqid()).'.'.$img->getClientOriginalExtension();
         $manager = new ImageManager(new Driver());
-        $manager->read($img)->resize(770, 950)->toPng()->save('upload/services/'.$img_name);
+        $manager->read($img)->scale(558, 591)->toPng()->save('upload/services/'.$img_name);
         $filename = 'upload/services/'.$img_name;
 
         $service = Service::create([
@@ -60,7 +60,7 @@ class ServicesController extends Controller
 //                $icon = $request->file('icon');
                 $icon_name = hexdec(uniqid()).'.'.$icon->getClientOriginalExtension();
                 $icon_manager = new ImageManager(new Driver());
-                $icon_manager->read($icon)->resize(770, 950)->toPng()->save('upload/services/icon/'.$icon_name);
+                $icon_manager->read($icon)->scale(558, 591)->toPng()->save('upload/services/icon/'.$icon_name);
                 $icon_name = 'upload/services/icon/'.$icon_name;
 
                 ServiceMulitImage::create([
@@ -109,11 +109,10 @@ class ServicesController extends Controller
             $img = $request->file('image');
             $img_name = hexdec(uniqid()).'.'.$img->getClientOriginalExtension();
             $manager = new ImageManager(new Driver());
-            $manager->read($img)->resize(770, 950)->toPng()->save('upload/services/'.$img_name);
+            $manager->read($img)->scale(558, 591)->toPng()->save('upload/services/'.$img_name);
             $filename = 'upload/services/'.$img_name;
-            if ($data->image)
-            {
-                unlink($data->image);
+            if ($data->image && file_exists($data->image)) {
+                unlink(public_path($data->image));
             }
 
             $data->update([
@@ -140,9 +139,8 @@ class ServicesController extends Controller
     public function destroy(string $id)
     {
         $data = Service::findOrFail($id);
-        if ($data->image)
-        {
-            unlink($data->image);
+        if ($data->image && file_exists($data->image)) {
+            unlink(public_path($data->image));
         }
         $data->delete();
         return redirect()->route('services.index')->with([

@@ -122,10 +122,10 @@ class PartnerController extends Controller
     public function destroy(string $id)
     {
         $data = Partner::findOrFail($id);
-        if ($data->image)
-            if ($data->image && file_exists($data->image)) {
-                unlink(public_path($data->image));
-            }
+        if ($data->image && file_exists($data->image)) {
+            unlink(public_path($data->image));
+        }
+
         $data->delete();
         return redirect()->route('partners.index')->with([
             'message' => 'Partner deleted successfully!',
