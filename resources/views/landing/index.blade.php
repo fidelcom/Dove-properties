@@ -139,7 +139,7 @@
     <!-- about-area-end -->
 
     <!-- counter-area -->
-    <div class="counter-area pt-120 pb-90" style="background-image:url(landing/img/bg/count-bg.jpg); background-size:cover;">
+    <div class="counter-area pt-120 pb-90" style="background-image:url({{ asset('landing/img/bg/count-bg.jpg') }}); background-size:cover;">
         <div class="container">
             <div class="row">
                 @foreach($successes as $key => $success)
@@ -453,7 +453,7 @@
     </section>
     <!-- services-area-end -->
     <!-- cta-area -->
-    <section class="cta-area cta-bg pt-120 pb-120" style="background-image:url(landing/img/bg/cta_bg02.jpg)">
+    <section class="cta-area cta-bg pt-120 pb-120" style="background-image:url({{ asset('landing/img/bg/cta_bg02.jpg') }})">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-12">
@@ -778,7 +778,7 @@
     <!-- services-area-end -->
 
     <!-- testimonial-area -->
-    <section id="testimonios" class="testimonial-area gray-bg testimonial-p pt-115 pb-185 text-center" style="background-image:url(landing/img/testimonial/test-bg.jpg)">
+    <section id="testimonios" class="testimonial-area gray-bg testimonial-p pt-115 pb-185 text-center" style="background-image:url({{ asset('landing/img/testimonial/test-bg.jpg') }})">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2">
@@ -851,7 +851,7 @@
     <!-- blog-area-end -->
 
     <!-- contact-area -->
-    <section id="contact" class="contact-area contact-bg pt-120 pb-120 p-relative fix" style="background-image:url(img/bg/contact_bg.jpg)">
+    <section id="contact" class="contact-area contact-bg pt-120 pb-120 p-relative fix" style="background-image:url({{ asset('landing/img/bg/contact_bg.jpg') }})">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-8">
