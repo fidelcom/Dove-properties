@@ -34,12 +34,14 @@
                         </div>
                         <div class="footer-link">
                             <ul>
-                                <li><a href="#">Partners</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Career</a></li>
-                                <li><a href="#">Reviews</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Help</a></li>
+{{--                                <li><a href="#">Partners</a></li>--}}
+                                <li><a href="{{ route('about.us') }}">About Us</a></li>
+{{--                                <li><a href="#">Career</a></li>--}}
+{{--                                <li><a href="#">Reviews</a></li>--}}
+{{--                                <li><a href="#">Terms & Conditions</a></li>--}}
+{{--                                <li><a href="#">Help</a></li>--}}
+                                <li><a href="#">Our Team</a></li>
+                                <li><a href="{{ route('blog') }}">Latest Blog</a></li>
                             </ul>
                         </div>
                     </div>
@@ -51,12 +53,11 @@
                         </div>
                         <div class="footer-link">
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Project</a></li>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="#">Latest Blog</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="{{ route('about.us') }}">About Us</a></li>
+                                <li><a href="{{ route('all-services.index') }}">Services</a></li>
+                                <li><a href="{{ route('all-projects.index') }}">Project</a></li>
+
                             </ul>
                         </div>
                     </div>

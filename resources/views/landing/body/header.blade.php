@@ -52,9 +52,9 @@
 {{--                                            <li><a href="index-2.html">Home Page 02</a></li>--}}
 {{--                                        </ul>--}}
                                     </li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Projects </a></li>
+                                    <li><a href="{{ route('about.us') }}">About Us</a></li>
+                                    <li><a href="{{ route('all-services.index') }}">Services</a></li>
+                                    <li><a href="{{ route('all-projects.index') }}">Projects </a></li>
 {{--                                    <li><a href="#">Apartments </a></li>--}}
 {{--                                    <li class="has-sub"><a href="#">Other Page</a>--}}
 {{--                                        <ul>--}}
@@ -63,8 +63,8 @@
 {{--                                            <li><a href="gallery.html">Gallery</a></li>--}}
 {{--                                        </ul>--}}
 {{--                                    </li>--}}
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#" class="top-btn">Contact</a></li>
+                                    <li><a href="{{ route('blog') }}">Blog</a></li>
+                                    <li><a href="{{ route('contact.us') }}" class="top-btn">Contact</a></li>
 {{--                                    <li><a href="#" class="top-btn">SINGUP</a></li>--}}
                                 </ul>
                             </nav>
