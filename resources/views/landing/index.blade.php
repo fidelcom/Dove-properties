@@ -314,30 +314,34 @@
                 <div class="col-xl-6">
                     <div class="choose-wrap">
                         <div class="section-title w-title left-align mb-35 wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
-                            <span>Best Place</span>
-                            <h2>For Sell Properties</h2>
+                            <span>Why Choose Us</span>
+                            <h2>{{ $whyUs->title }}</h2>
                         </div>
                         <div class="choose-content wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                            <p>Pellentesque habitant morbi tristique senectus et netus et fames acturpis egestas. Vestibulum tortor quam, feugiat vitae, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. mivitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien.</p>
+                            <p>{!! $whyUs->desc !!}</p>
 
                             <div class="choose-list mt-20 mb-20">
                                 <ul>
-                                    <li>
-                                        <i class="fas fa-bed"></i>
-                                        <span>3 Bedrooms.</span>
-                                    </li>
-                                    <li>
-                                        <i class="fal fa-pencil-ruler"></i>
-                                        <span>Square Feet </span>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-bath"></i>
-                                        <span>Bedrooms</span>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-car"></i>
-                                        <span>Car parking</span>
-                                    </li>
+                                    @php $icons = ["fas fa-bed", "fal fa-pencil-ruler", "fas fa-bath", "fas fa-car", "fas fa-home", "fas fa-location", "fas fa-location", "fas fa-location", "fas fa-location" ]; @endphp
+                                    @foreach($whyChooseUs as $key => $us)
+                                        <li>
+                                            <i class="{{ $icons[$key] }}"></i>
+                                            <span>{{ $us->title }}</span>
+                                        </li>
+                                    @endforeach
+
+{{--                                    <li>--}}
+{{--                                        <i class="fal fa-pencil-ruler"></i>--}}
+{{--                                        <span>Square Feet </span>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <i class="fas fa-bath"></i>--}}
+{{--                                        <span>Bedrooms</span>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <i class="fas fa-car"></i>--}}
+{{--                                        <span>Car parking</span>--}}
+{{--                                    </li>--}}
                                 </ul>
                             </div>
 {{--                            <h3>Price:</h3>--}}
@@ -476,8 +480,8 @@
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-10">
                     <div class="section-title text-center pl-40 pr-40 mb-80 wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <span>Our Plans</span>
-                        <h2> Apartments Plans </h2>
+                        <span>Our Best</span>
+                        <h2> Projects </h2>
                     </div>
                 </div>
             </div>
@@ -747,78 +751,26 @@
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-10">
                     <div class="section-title text-center pl-40 pr-40 mb-80 wow fadeInDown animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <span> villa neihborhoods</span>
-                        <h2> Neighborhoods</h2>
+                        <span> Services</span>
+                        <h2> DOVE LIVAMI PROPERTIES LTD</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="s-single-services  wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <div class="second-services-content">
-                            <h5>Hospital </h5>
-                            <p>Christ, General Hospital 0.18km</p>
-                        </div>
-                        <div class="services-icon">
-                            <i class="far fa-star-half"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="s-single-services active wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <div class="second-services-content">
-                            <h5>Super Market </h5>
-                            <p>Moonfrog Super Market 0.25km</p>
-                        </div>
-                        <div class="services-icon">
-                            <i class="far fa-star-half"></i>
+                @foreach($services as $service)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="s-single-services  wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
+                            <div class="second-services-content">
+                                <h5>{{ $service->title }} </h5>
+{{--                                <p>Christ, General Hospital 0.18km</p>--}}
+                            </div>
+                            <div class="services-icon">
+                                <i class="far fa-star-half"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="s-single-services wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <div class="second-services-content">
-                            <h5>Restaurant</h5>
-                            <p>hot chicken grill 0.4km</p>
-                        </div>
-                        <div class="services-icon">
-                            <i class="far fa-star-half"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="s-single-services wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <div class="second-services-content">
-                            <h5>Shopping Mall </h5>
-                            <p>Amsterdam Shopping Mall 0.13km</p>
-                        </div>
-                        <div class="services-icon">
-                            <i class="far fa-star-half"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="s-single-services wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <div class="second-services-content">
-                            <h5>Coffee Pot </h5>
-                            <p>McAfee Coffee Shop 0.35km</p>
-                        </div>
-                        <div class="services-icon">
-                            <i class="far fa-star-half"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="s-single-services wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <div class="second-services-content">
-                            <h5>Metro Stations</h5>
-                            <p>Metro Stations 0.50km</p>
-                        </div>
-                        <div class="services-icon">
-                            <i class="far fa-star-half"></i>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
 
         </div>
@@ -887,7 +839,7 @@
                                         <li><a href="#" class="corpo">{{ $post->blog_category->name }} </a></li>
                                     </ul>
                                 </div>
-                                <h4><a href="blog-details.html">{{ $post->title }}</a></h4>
+                                <h4><a href="#">{{ $post->title }}</a></h4>
                             </div>
                         </div>
                     </div>
@@ -941,6 +893,16 @@
                 <div class="col-lg-8">
                     <form action="{{ route('landing.contact.us') }}" class="contact-form wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
                         @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="contact-field p-relative c-name mb-40">

@@ -30,6 +30,16 @@
                         <p class="card-title-desc"></p>
                         <form method="POST" action="{{ route('about.store') }}" enctype="multipart/form-data">
                             @csrf
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">About Title</label>
                                 <div class="col-sm-10">

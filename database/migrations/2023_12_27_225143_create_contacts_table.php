@@ -16,9 +16,13 @@ return new class extends Migration
             $table->string('address');
             $table->string('phone');
             $table->string('email');
-            $table->string('instagram');
-            $table->string('twitter');
-            $table->string('linkedin');
+            $table->string('instagram')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('pinterest')->nullable();
+            $table->string('google')->nullable();
             $table->timestamps();
         });
     }

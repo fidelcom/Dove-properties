@@ -40,7 +40,7 @@
                                     </ul>
                                 </div>
                                 <h2><a href="{{ route('blog.show', $post->id) }}">{{ $post->title }}</a></h2>
-                                <p>{!! $post->short_desc !!}</p>
+                                <p>{!! Str::limit($post->short_desc, 100) !!}</p>
                                 <div class="blog__btn">
                                     <a href="{{ route('blog.show', $post->id) }}" class="btn">Read More</a>
                                 </div>
@@ -126,7 +126,7 @@
                                 <a href="{{ $contact->pinterest }}"><i class="fab fa-pinterest-p"></i></a>
                                 <a href="{{ $contact->facebook }}"><i class="fab fa-facebook-f"></i></a>
                                 <a href="{{ $contact->instagram }}"><i class="fab fa-instagram"></i></a>
-                                <a href="{{ $contact->web }}"><i class="fab fa-wordpress"></i></a>
+                                <a href="{{ $contact->youtube }}"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                         <div class="widget mb-40">

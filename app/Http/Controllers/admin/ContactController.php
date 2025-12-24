@@ -34,9 +34,13 @@ class ContactController extends Controller
             'address' => 'required',
             'phone' => 'required',
             'email' => 'required',
-            'instagram' => 'required',
-            'twitter' => 'required',
-            'linkedin' => 'required',
+            'instagram' => 'nullable|string',
+            'twitter' => 'nullable|string',
+            'linkedin' => 'nullable|string',
+            'facebook' => 'nullable|string',
+            'youtube' => 'nullable|string',
+            'google' => 'nullable|string',
+            'pinterest' => 'nullable|string',
         ]);
 
         Contact::create([
@@ -46,6 +50,10 @@ class ContactController extends Controller
             'instagram' => $request->instagram,
             'twitter' => $request->twitter,
             'linkedin' => $request->linkedin,
+            'facebook' => $request->facebook,
+            'google' => $request->google,
+            'youtube' => $request->youtube,
+            'pinterest' => $request->pinterest,
         ]);
 
         return redirect()->route('contact.index')->with([
@@ -81,9 +89,13 @@ class ContactController extends Controller
             'address' => 'required',
             'phone' => 'required',
             'email' => 'required',
-            'instagram' => 'required',
-            'twitter' => 'required',
-            'linkedin' => 'required',
+            'instagram' => 'nullable|string',
+            'twitter' => 'nullable|string',
+            'linkedin' => 'nullable|string',
+            'facebook' => 'nullable|string',
+            'youtube' => 'nullable|string',
+            'google' => 'nullable|string',
+            'pinterest' => 'nullable|string',
         ]);
 
         $data->update([
@@ -93,6 +105,10 @@ class ContactController extends Controller
             'instagram' => $request->instagram,
             'twitter' => $request->twitter,
             'linkedin' => $request->linkedin,
+            'facebook' => $request->facebook,
+            'google' => $request->google,
+            'youtube' => $request->youtube,
+            'pinterest' => $request->pinterest,
         ]);
 
         return redirect()->route('contact.index')->with([

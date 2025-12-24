@@ -56,7 +56,7 @@
                             </div>
                             <h5>Message Us</h5>
                             <p>We are always with you to solve your problem
-                                mail us : <a href="#">{{ $contact->email }}</a></p>
+                                mail us : <a href="{{ $contact->email }}">{{ $contact->email }}</a></p>
                         </div>
                     </div>
 
@@ -64,6 +64,16 @@
                 <div class="col-lg-8">
                     <form action="{{ route('contact.us.store') }}" method="POST" class="contact-form wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
                         @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="contact-field p-relative c-name mb-40">

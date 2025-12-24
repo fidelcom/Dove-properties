@@ -30,6 +30,16 @@
                         <p class="card-title-desc"></p>
                         <form method="POST" action="{{ route('contact.update', $data->id) }}" enctype="multipart/form-data">
                             @csrf @method('PUT')
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Office Address</label>
                                 <div class="col-sm-10">
@@ -74,6 +84,37 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Office Linkedin Link</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="url" name="linkedin" value="{{ $data->linkedin }}" placeholder="Linkedin Link" id="example-text-input">
+                                </div>
+                            </div>
+                            <!-- end row -->
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Office Facebook Link</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="url" name="facebook" value="{{ $data->facebook }}" placeholder="Facebook Link" id="example-text-input">
+                                </div>
+                            </div>
+                            <!-- end row -->
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Office Youtube Link</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="url" name="youtube" value="{{ $data->youtube }}" placeholder="Youtube Link" id="example-text-input">
+                                </div>
+                            </div>
+                            <!-- end row -->
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Office Google Plus Link</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="url" name="google" value="{{ $data->google }}" placeholder="google Link" id="example-text-input">
+                                </div>
+                            </div>
+                            <!-- end row -->
+
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Office Pinterest Link</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="url" name="pinterest" value="{{ $data->pinterest }}" placeholder="Pinterest Link" id="example-text-input">
                                 </div>
                             </div>
                             <!-- end row -->

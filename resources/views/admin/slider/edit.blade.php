@@ -31,6 +31,16 @@
                         <form method="POST" action="{{ route('slider.update', $data->id) }}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Slider Title</label>
                                 <div class="col-sm-10">

@@ -13,6 +13,7 @@ use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Success;
 use App\Models\Testimonial;
+use App\Models\WhyUs;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -29,7 +30,9 @@ class LandingController extends Controller
         $contact  = Contact::first();
         $successes = Success::all();
         $brands = Partner::all();
-        return view('landing.index', compact('about', 'posts', 'projectCategories', 'projects', 'sliders', 'testimonials', 'services', 'contact', 'successes', 'brands'));
+        $whyUs = WhyUs::first();
+        $whyChooseUs = WhyUs::all();
+        return view('landing.index', compact('about', 'posts', 'projectCategories', 'projects', 'sliders', 'testimonials', 'services', 'contact', 'successes', 'brands', 'whyUs', 'whyChooseUs'));
     }
 
     public function contactUs(Request $request)

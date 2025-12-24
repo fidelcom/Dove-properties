@@ -18,10 +18,12 @@
                         </div>
                         <div class="footer-social">
                             <span>Follow Us</span>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="{{ $contact->facebook }}"><i class="fab fa-facebook-f"></i></a>
                             <a href="{{ $contact->twitter }}"><i class="fab fa-twitter"></i></a>
                             <a href="{{ $contact->instagram }}"><i class="fab fa-instagram"></i></a>
-                            <a href="{{ $contact->linkedin }}"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="{{ $contact->linkedin }}"><i class="fab fa-linkedin"></i></a>
+                            <a href="{{ $contact->google }}"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="{{ $contact->youtube }}"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
