@@ -40,7 +40,7 @@
 {{--                                <li><a href="#">Reviews</a></li>--}}
 {{--                                <li><a href="#">Terms & Conditions</a></li>--}}
 {{--                                <li><a href="#">Help</a></li>--}}
-                                <li><a href="#">Our Team</a></li>
+                                <li><a href="{{ route('our.team') }}">Our Team</a></li>
                                 <li><a href="{{ route('blog') }}">Latest Blog</a></li>
                             </ul>
                         </div>

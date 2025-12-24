@@ -12,6 +12,7 @@ use App\Models\ProjectCategory;
 use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Success;
+use App\Models\Team;
 use App\Models\Testimonial;
 use App\Models\WhyUs;
 use Illuminate\Http\Request;
@@ -61,5 +62,11 @@ class LandingController extends Controller
             'message' => 'Your message has been sent successfully!',
             'alert-type' => 'success'
         ]);
+    }
+
+    public function team()
+    {
+        $teams = Team::latest()->get();
+        return view('landing.teams.index', compact('teams'));
     }
 }

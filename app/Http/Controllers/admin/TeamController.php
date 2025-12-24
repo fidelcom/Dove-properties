@@ -102,9 +102,8 @@ class TeamController extends Controller
             $manager = new ImageManager(new Driver());
             $manager->read($img)->resize(280, 410)->toPng()->save('upload/team/'.$img_name);
             $filename = 'upload/team/'.$img_name;
-            if ($data->image)
-            {
-                unlink($data->image);
+            if ($data->image && file_exists($data->image)) {
+                unlink(public_path($data->image));
             }
             $data->update([
                 'image' => $filename
@@ -131,9 +130,8 @@ class TeamController extends Controller
     public function destroy(string $id)
     {
         $data = Team::findOrFail($id);
-        if ($data->image)
-        {
-            unlink($data->image);
+        if ($data->image && file_exists($data->image)) {
+            unlink(public_path($data->image));
         }
         $data->delete();
         return redirect()->route('team.index')->with([
